@@ -10,7 +10,7 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "DB"
 database_name = "buildbyte"
-database_id = "REPLACE_WITH_YOUR_D1_ID"
+database_id = "5f52cb04-84b5-46ba-93eb-f88ef7d0a0d5"
 
 # ─────────────────────────────────────────────────────────────
 # R2 bucket binding (optional — used for storing screenshots /
