@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>buildbyte.buzz — Build & Deploy Websites with AI, Free</title>
+  <meta name="description" content="buildbyte.buzz turns a single prompt into a production-ready website, deployed to the edge in seconds. No code. No servers. No cost." />
+  <meta name="theme-color" content="#0a0a0b" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="buildbyte.buzz — Coming soon" />
+  <meta property="og:description" content="Build & deploy websites with AI, free. Launching January 13." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://buildbyte.buzz" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Click-ripple canvas overlay -->
+  <canvas id="ripple-canvas" aria-hidden="true"></canvas>
+
+  <!-- Background grid + glow -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ─────────────────────  NAV  ───────────────────── -->
+  <header class="nav" data-reveal>
+    <a class="nav__brand" href="#top" data-magnetic>
+      <span class="nav__logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+          <path d="M16 2 L28 9 V23 L16 30 L4 23 V9 Z" stroke="#A3E635" stroke-width="1.5" />
+          <path d="M11 12h5a3 3 0 0 1 0 6h-5z M11 14v8 M14 18l4 4" stroke="#A3E635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="nav__name">buildbyte<b>.buzz</b></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#features" data-magnetic>Features</a>
+      <a href="#how" data-magnetic>How it works</a>
+      <a href="#faq" data-magnetic>FAQ</a>
+    </nav>
+    <a class="nav__cta glass" href="#notify" data-magnetic>Get notified</a>
+  </header>
+
+  <main id="top">
+    <!-- ─────────────────────  HERO  ───────────────────── -->
+    <section class="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero__inner" data-reveal>
+        <span class="hero__badge glass-pill" id="hero-badge">Coming soon · January 13</span>
+        <h1 class="hero__title" id="hero-title">
+          Build &amp; Deploy Websites<br />
+          with <span class="accent">AI</span> — Free.
+        </h1>
+        <p class="hero__subtitle" id="hero-subtitle">
+          buildbyte.buzz turns a single prompt into a production-ready website,
+          deployed to the edge in seconds. No code. No servers. No cost.
+        </p>
+
+        <form class="hero__form glass" id="notify-form" autocomplete="off">
+          <input
+            type="email"
+            id="notify-email"
+            name="email"
+            required
+            placeholder="you@domain.com"
+            aria-label="Email address"
+          />
+          <button type="submit" class="btn-primary" data-magnetic id="notify-btn">
+            Notify me at launch
+          </button>
+        </form>
+        <p class="hero__form-msg" id="notify-msg" role="status" aria-live="polite"></p>
+
+        <p class="hero__hint">No spam. One email when we launch. Unsubscribe anytime.</p>
+      </div>
+
+      <a href="#countdown" class="hero__scroll" aria-label="Scroll down" data-magnetic>
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ─────────────────  COUNTDOWN  ───────────────── -->
+    <section class="countdown" id="countdown">
+      <div class="countdown__inner glass" data-reveal data-tilt>
+        <p class="countdown__label">Time until launch</p>
+        <div class="countdown__grid" id="countdown-grid">
+          <div class="countdown__unit">
+            <span class="countdown__num" id="cd-days">00</span>
+            <span class="countdown__unit-label">Days</span>
+          </div>
+          <div class="countdown__unit">
+            <span class="countdown__num" id="cd-hours">00</span>
+            <span class="countdown__unit-label">Hours</span>
+          </div>
+          <div class="countdown__unit">
+            <span class="countdown__num" id="cd-mins">00</span>
+            <span class="countdown__unit-label">Minutes</span>
+          </div>
+          <div class="countdown__unit">
+            <span class="countdown__num" id="cd-secs">00</span>
+            <span class="countdown__unit-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────  FEATURES  ───────────────── -->
+    <section class="features" id="features">
+      <header class="section-head" data-reveal>
+        <span class="section-head__kicker">// features</span>
+        <h2 class="section-head__title">Everything you need to ship.</h2>
+        <p class="section-head__sub">A complete AI website stack, free from the first prompt to the global deploy.</p>
+      </header>
+
+      <div class="features__grid">
+        <article class="glass card" data-reveal data-tilt>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2 4 4 .5-3 3 .8 4L12 13l-3.8 2.5L9 9.5 6 6.5l4-.5z"/></svg>
+          </div>
+          <h3 class="card__title" data-feature="1_title">AI-Powered Build</h3>
+          <p class="card__desc" data-feature="1_desc">Describe what you want in plain language. The agent designs, writes, and assembles every section.</p>
+        </article>
+
+        <article class="glass card" data-reveal data-tilt>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v9m0 0l-3-3m3 3l3-3M5 15v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+          </div>
+          <h3 class="card__title" data-feature="2_title">1-Click Deploy</h3>
+          <p class="card__desc" data-feature="2_desc">Ship to Cloudflare's global edge network in a single tap. No DevOps, no config files.</p>
+        </article>
+
+        <article class="glass card" data-reveal data-tilt>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </div>
+          <h3 class="card__title" data-feature="3_title">Free Custom Domain</h3>
+          <p class="card__desc" data-feature="3_desc">Bring your own domain or use a buildbyte.buzz subdomain — SSL and CDN included, forever free.</p>
+        </article>
+
+        <article class="glass card" data-reveal data-tilt>
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h10M4 18h16M16 10l4 2-4 2"/></svg>
+          </div>
+          <h3 class="card__title" data-feature="4_title">No-Code Editor</h3>
+          <p class="card__desc" data-feature="4_desc">Tweak copy, layout, and palette visually. Changes go live the instant you save.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─────────────────  HOW IT WORKS  ───────────────── -->
+    <section class="how" id="how">
+      <header class="section-head" data-reveal>
+        <span class="section-head__kicker">// how it works</span>
+        <h2 class="section-head__title">From prompt to deploy in three steps.</h2>
+      </header>
+
+      <ol class="how__flow">
+        <li class="glass how__step" data-reveal data-tilt>
+          <span class="how__num">01</span>
+          <h3 class="how__title" data-step="1_title">Describe</h3>
+          <p class="how__desc" data-step="1_desc">Tell buildbyte what you're building — a portfolio, a store, a launch page.</p>
+        </li>
+        <li class="glass how__step" data-reveal data-tilt>
+          <span class="how__num">02</span>
+          <h3 class="how__title" data-step="2_title">AI Builds</h3>
+          <p class="how__desc" data-step="2_desc">The agent drafts layout, copy, images, and SEO in seconds. Preview it instantly.</p>
+        </li>
+        <li class="glass how__step" data-reveal data-tilt>
+          <span class="how__num">03</span>
+          <h3 class="how__title" data-step="3_title">Deploy</h3>
+          <p class="how__desc" data-step="3_desc">Hit publish. Your site is live on the edge with a free domain and SSL.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ─────────────────  FAQ  ───────────────── -->
+    <section class="faq" id="faq">
+      <header class="section-head" data-reveal>
+        <span class="section-head__kicker">// faq</span>
+        <h2 class="section-head__title">Questions, answered.</h2>
+      </header>
+
+      <div class="faq__list" id="faq-list">
+        <details class="glass faq__item" data-reveal>
+          <summary data-faq="1_q">Is buildbyte really free?</summary>
+          <p data-faq="1_a">Yes. Building, deploying, and hosting on a buildbyte.buzz subdomain is free forever. Custom domains are free during the launch period.</p>
+        </details>
+        <details class="glass faq__item" data-reveal>
+          <summary data-faq="2_q">Do I need to know how to code?</summary>
+          <p data-faq="2_a">No. Describe your site in plain language and the AI handles the rest. A visual editor lets you refine anything afterward.</p>
+        </details>
+        <details class="glass faq__item" data-reveal>
+          <summary data-faq="3_q">Where is my site hosted?</summary>
+          <p data-faq="3_a">On Cloudflare's global edge network — 300+ cities, automatic SSL, sub-50ms TTFB almost everywhere.</p>
+        </details>
+        <details class="glass faq__item" data-reveal>
+          <summary data-faq="4_q">Can I export my code?</summary>
+          <p data-faq="4_a">Every site is standard HTML, CSS, and TypeScript. Export the full source anytime.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ─────────────────  NOTIFY (final CTA)  ───────────────── -->
+    <section class="notify" id="notify">
+      <div class="glass notify__card" data-reveal data-tilt>
+        <h2 class="notify__title">Be first to ship with buildbyte.</h2>
+        <p class="notify__sub">Drop your email. We'll ping you exactly once when the platform goes live on <b>January 13</b>.</p>
+        <form class="notify__form" id="notify-form-2" autocomplete="off">
+          <input type="email" id="notify-email-2" name="email" required placeholder="you@domain.com" aria-label="Email address" />
+          <button type="submit" class="btn-primary" data-magnetic>Notify me</button>
+        </form>
+        <p class="hero__form-msg" id="notify-msg-2" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─────────────────────  FOOTER  ───────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner" data-reveal>
+      <div class="footer__brand">
+        <span class="nav__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <path d="M16 2 L28 9 V23 L16 30 L4 23 V9 Z" stroke="#A3E635" stroke-width="1.5" />
+          </svg>
+        </span>
+        <span class="nav__name">buildbyte<b>.buzz</b></span>
+      </div>
+      <p class="footer__tagline" data-content="footer_tagline">Made with AI on Cloudflare.</p>
+      <nav class="footer__social">
+        <a href="https://twitter.com/buildbyte" data-content="footer_twitter" data-magnetic aria-label="Twitter / X">X</a>
+        <a href="https://github.com/buildbyte" data-content="footer_github" data-magnetic aria-label="GitHub">GitHub</a>
+        <a href="https://discord.gg/buildbyte" data-content="footer_discord" data-magnetic aria-label="Discord">Discord</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> <span data-content="footer_copyright">buildbyte.buzz</span> · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
